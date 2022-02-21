@@ -12,7 +12,7 @@ export async function createTodo(todo) {
 export async function deleteAllTodos() {
     await client
         .from('todos')
-        .delete()
+        .delete();
 }
 
 export async function getTodos() {
