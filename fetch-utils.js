@@ -3,14 +3,8 @@ const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsI
 
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-export async function createTodo(){
-    const response = client
-        .from('todos')
-        .insert({ 
-            todo: todo,
-            complete: false, 
-        })
-        .single();
+export async function createTodo(todo) {
+    const response = await client.from('todos').insert({ todo }).single();
 
     return checkError(response);
 }
@@ -30,7 +24,7 @@ export async function getTodos() {
 export async function completeTodo(id) {
     const response = await client
         .from('todos')
-        .update({ complete: false })
+        .update({ complete: true })
         .match({ id: id });
 
     return checkError(response);    

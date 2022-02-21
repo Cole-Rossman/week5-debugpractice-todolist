@@ -1,4 +1,4 @@
-import { displayTodo } from '../render-utils.js';
+import { renderTodo } from '../render-utils.js';
 
 const test = QUnit.test;
 
@@ -9,7 +9,7 @@ test('displayTodo should render a div with a p element with todo and complete cl
     
     //Act 
     // Call the function you're testing and set the result to a const
-    const actual = displayTodo({ todo: 'Have fun', complete: true });
+    const actual = renderTodo({ todo: 'Have fun', complete: true });
 
     //Expect
     // Make assertions about what is expected versus the actual result
@@ -23,7 +23,7 @@ test('displayTodo should render a div with a p element with todo and incomplete 
     
     //Act 
     // Call the function you're testing and set the result to a const
-    const actual = displayTodo({ todo: 'Have fun', complete: false });
+    const actual = renderTodo({ todo: 'Have fun', complete: false });
 
     //Expect
     // Make assertions about what is expected versus the actual result
